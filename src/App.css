@@ -1,0 +1,206 @@
+/**
+
+ * 1. Correct the line height in all browsers.
+
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+.books-title {
+  padding: 10px 0;
+  background: #339236;
+  text-align: center;
+  height: 70px;
+  width: 100%;
+  position: fixed;
+}
+
+.books-title h1 {
+  font-weight: 500;
+  margin: 0;
+  color: white;
+}
+
+.books-content {
+  padding: 75px 0;
+}
+
+.open-search {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+.open-search button {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px8px rgba(0, 0, 0, 0.18), 0 3px 6px rgba(0, 0, 0, 0.25);
+  font-size: 0;
+  outline: 0;
+  background: #339236;
+  background-image: url('./icons/add.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+}
+
+.open-search button:hover {
+  background-color: rgb(6, 128, 6);
+}
+
+.search-books-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(6, 5, 5, 0.23);
+  z-index: 5;
+}
+
+.search-books-input-wrapper {
+  flex: 1;
+  background: rgb(243, 148, 243);
+}
+
+.search-books-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 1.25em;
+}
+
+.close-search {
+  display: block;
+  top: 25px;
+  left: 15px;
+  width: 60px;
+  height: 50px;
+  font-size: 0;
+  border: none;
+  outline: none;
+  background-image: url('./icons/arrow-back.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+}
+
+.search-books-results {
+  padding: 80px 10px 20px;
+}
+
+.shelf {
+  padding: 0 10px 20px;
+}
+
+@media (min-width: 600px) {
+  .shelf {
+    padding: 0 20px 45px;
+  }
+}
+
+.shelf-title {
+  border-bottom: 1px solid #efe3e3;
+}
+
+.shelf-books {
+  text-align: center;
+}
+
+.books-grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.books-grid li {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.book {
+  width: 140px;
+}
+
+.book-title,
+.book-authors {
+  font-size: 0.8em;
+}
+
+.book-title {
+  margin-top: 10px;
+}
+
+.book-authors {
+  color: #999;
+}
+
+.book-top {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.book-shelf-changer {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(6, 5, 5, 0.23);
+  background: #61b65e;
+  background-image: url('./icons/arrow-drop-down.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+
+.book-shelf-changer select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.book-cover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(6, 5, 5, 0.23);
+  background: rgb(244, 229, 229);
+}
+
+.book-cover-title {
+  padding: 20px 10px 0;
+  text-align: center;
+  font-size: 0.9em;
+}
