@@ -10,7 +10,7 @@ const Book = (props) => (
           style={{
             width: 130,
             height: 200,
-            backgroundImage: `url(${props.book.imageLinks.thumbnail})`,
+            backgroundImage: `url(${props.book.imageLinks? props.book.imageLinks.thumbnail : "defaultLink"})`,
           }}
         />
         <BookshelfChanger
@@ -29,4 +29,4 @@ const Book = (props) => (
   </li>
 );
 
-export default Book;
+export default React.memo(Book);

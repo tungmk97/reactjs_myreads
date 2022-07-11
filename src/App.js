@@ -6,6 +6,7 @@ import './App.css';
 import ListBooks from './components/ListBooks';
 import SearchBooks from './components/SearchBooks';
 
+
 const bookshelves = [
   { key: 'currentlyReading', name: 'Currently Reading' },
   { key: 'wantToRead', name: 'Want to Read' },
@@ -18,10 +19,9 @@ class App extends Component {
     listBookSearch: [],
   };
 
-  componentDidMount = () => {
-    BooksAPI.getAll().then((books) => {
-      this.setState({ listBook: books });
-    });
+  componentDidMount = async () => {
+    const books = await BooksAPI.getAll();
+    this.setState({ listBook: books });
     console.log(this.state.listBook);
   };
 

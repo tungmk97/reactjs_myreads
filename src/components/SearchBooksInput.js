@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { Debounce } from 'react-throttle';
 
 class SearchBooksInput extends Component {
   state = {
     value: '',
   };
 
-  handleChangeInput = event => {
+  handleChangeInput = (event) => {
+    console.log('=====');
+    console.log(event.target.value);
     const val = event.target.value;
     this.setState({ value: val }, () => {
       this.props.onSearch(val);
@@ -15,13 +18,15 @@ class SearchBooksInput extends Component {
   render() {
     return (
       <div className="search-books-input-wrapper">
-        <input
-          type="text"
-          value={this.state.value}
-          onChange={this.handleChangeInput}
-          placeholder="Please enter title or author..."
-          autoFocus
-        />
+        <Debounce time="400" handler="onChange">
+          <input
+            type="text"
+            // value={this.state.value}
+            onChange={this.handleChangeInput}
+            placeholder="Please enter title or author..."
+            autoFocus
+          />
+        </Debounce>
       </div>
     );
   }
